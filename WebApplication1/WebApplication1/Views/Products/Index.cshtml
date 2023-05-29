@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication1.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Style/StyleSheetForLoggedInEmp.css" rel="stylesheet" />
+
+<h2>Enter Products for Your Store</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+<p>
+    @Html.ActionLink("Click here to Go Back to Home Page", "Index", "FarmerHome")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Farmer.FarmerEmail)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Farmer.FarmerEmail)
+            </td>
+            <td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { ProductID = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { ProductID = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { ProductID = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>

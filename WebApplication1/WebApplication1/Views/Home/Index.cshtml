@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Employee Home Page";
+    <link href="~/Style/StyleSheetForLoggedInEmp.css" rel="stylesheet" />
+
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Employee Home Page</h1>
+        <p class="lead">Welcome Employee, please select which task you would like to do today</p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="AddFarmerTItle">Adding Farmers</h2>
+            <p>
+                This is where you can add farmers to the database so that they may get access to the site and its features.
+                Once added, they will be able login, logout, and add products to the database.
+            </p>
+            <p><a class="btn btn-outline-dark" href="~/Farmers/Index">Click Here to Proceed &raquo;</a></p>
+        </section>
+
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="SearchWithID">Search Farmer Products using ID</h2>
+            <p>
+                This is where you will be able to easily filter and search the Products table using the FarmerID field.
+                It will allow you to keep track of a particular Farmers items as well as help you if you are looking for a specifc farmer
+
+            </p>
+            <p><a class="btn btn-outline-dark" href="~/SearchUsingID/Index">Click Here to Proceed &raquo;</a></p>
+        </section>
+
+        <section class="col-md-4" aria-labelledby="SearchUsingDateAndID">
+            <h2 id="SearchUsingDateAndID">Search for Farmer Products using Date Range and ID</h2>
+            <p>
+                Find the product of a specifc farmer using their FarmerID, and create a date range to see if the farmer added their item
+                within a given timeframe.
+            </p>
+            <p><a class="btn btn-outline-dark" href="~/SearchDateAndID/Index"> Click Here to Proceed &raquo;</a></p>
+        </section>
+    </div>
+</main>

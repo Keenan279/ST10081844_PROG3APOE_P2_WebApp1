@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Farmer Home Page";
+}
+<link href="~/Style/StyleSheetforLoggedInFarmer.css" rel="stylesheet" />
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Farmer Home Page</h1>
+        <p class="lead">Welcome Farmer, please select which task you would like to do today</p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="AddProductTItle">Add Products to Your Store</h2>
+            <p>
+                This is where you will be able to add the products that you're wanting to sell.
+                These products can be added, removed, or updated at any point in time.
+            </p>
+            <p><a class="btn btn-outline-dark" href="~/Products/Index">Click Here to Proceed &raquo;</a></p>
+        </section>
+
+
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">View Your Store Products</h2>
+            <p>
+                Here you will be able to view all the products that you have added to your store. It is filtered using your personal 
+                FarmerID assigned to you by one of the Employees.
+            </p>
+            <p><a class="btn btn-outline-dark" href="~/ShowSpecifcFarmerItems/Index">Learn more &raquo;</a></p>
+        </section>
+        
+    </div>
+</main>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebApplication1.Models.Farmer>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Style/StyleSheetForLoggedInEmp.css" rel="stylesheet" />
+
+<h2>Add, Delete, Edit, and See the Details of Farmers in the Database</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Click here to Go Back to Home Page", "Index", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FarmerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FarmerPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FarmerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FarmerStoreName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FarmerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FarmerPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FarmerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FarmerStoreName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { FarmerID = item.FarmerID }) |
+                @Html.ActionLink("Details", "Details", new { FarmerID = item.FarmerID }) |
+                @Html.ActionLink("Delete", "Delete", new { FarmerID = item.FarmerID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,80 @@
+﻿@model WebApplication1.Models.Employee
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+<link href="~/Style/StyleSheetForImages.css" rel="stylesheet" />
+
+<h2 style="color:white">Create Employee User</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 style="color:white">
+            Employee
+        </h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="color:white">
+            Enter Employee Email
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="color:white">
+            Enter a Password
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="color:white">
+            Enter Employee Name
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="color:white">
+            Employee Position
+            <div class="col-md-10">
+                @{
+                    //Creating a list so that the employee can choose their position from a fixed number
+                    List<SelectListItem> Position = new List<SelectListItem>();
+
+                    Position.Add(new SelectListItem { Text = "Accountant", Value = "Accountant" });
+                    Position.Add(new SelectListItem { Text = "Head of Marketing", Value = "Head of Marketing" });
+                    Position.Add(new SelectListItem { Text = "Store Manager", Value = "Store Manager" });
+                }
+
+                @Html.DropDownListFor(Model => Model.EmpPosition, Position, "--Select Your Current Position--", new { @class = "form-control" })
+
+
+
+
+                @Html.ValidationMessageFor(model => model.EmpPosition, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <p>
+
+        </p>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" />
+            </div>
+        </div>
+    </div>
+}
+<p>
+
+</p>
+<div>
+    @Html.ActionLink("Back to Login", "LoginAsEmp")
+</div>

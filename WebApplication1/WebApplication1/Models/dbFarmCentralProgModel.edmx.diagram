@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5bb222cb36e5450582fdcb12e5f00528" Name="Diagram1">
+        <EntityTypeShape EntityType="dbFarmCentralProgModel.Employee" Width="1.5" PointX="2.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmCentralProgModel.FarmerProduct" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmCentralProgModel.Farmer" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmCentralProgModel.Product" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmCentralProgModel.ProductType" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="dbFarmCentralProgModel.FK_FarmerProduct_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmCentralProgModel.FK_FarmerProduct_ToTable2" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmCentralProgModel.FK_Products_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmCentralProgModel.FK_Products_ToTable2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

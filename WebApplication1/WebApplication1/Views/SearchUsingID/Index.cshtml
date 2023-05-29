@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication1.Models.Product>
+<br />
+<br />
+<h2>Search for a Specifc Farmer Products using their FarmerID</h2>
+<p>
+</p>
+<link href="~/Style/StyleSheetForLoggedInEmp.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Index", "SearchUsingID", FormMethod.Get))
+{
+    @Html.TextBox("StringUsedForSearch")
+    <input type="submit" value="Search" />
+
+}
+@Html.ActionLink("Click here to Go Back to Home Page", "Index", "Home")
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ProductID</th>
+            <th>FarmerID</th>
+            <th>ProductTypeID</th>
+            <th>ProductName</th>
+            <th>ProductPrice</th>
+            <th>ProductQuantity</th>
+            <th>ProductDate</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+
+
+                <td colspan="3" style="color:red">
+                    No Match in the Table
+                </td>
+
+
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>@item.FarmerID</td>
+                    <td>@item.ProductTypeID</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductPrice</td>
+                    <td>@item.ProductQuantity</td>
+                    <td>@item.ProductDate</td>
+
+
+
+
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
